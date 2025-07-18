@@ -6,6 +6,30 @@
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
 
+    /* Type Checking */
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "alwaysStrict": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+
+    /* Modules */
+    "baseUrl": "./src/",
+    "paths": {
+      "@/*": ["*"],
+      "@components/*": ["components/*"],
+      "@utils/*": ["utils/*"],
+      "@hooks/*": ["hooks/*"],
+      "@stores/*": ["stores/*"],
+      "@types/*": ["types/*"],
+      "@assets/*": ["assets/*"],
+      "@styles/*": ["styles/*"],
+      "@config/*": ["config/*"],
+      "@lib/*": ["lib/*"],
+      "@tests/*": ["tests/*"]
+    },
+
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
