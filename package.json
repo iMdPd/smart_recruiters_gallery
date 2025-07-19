@@ -13,6 +13,7 @@
     "type-check": "tsc --noEmit"
   },
   "devDependencies": {
+    "@types/youtube": "^0.1.2",
     "@typescript-eslint/eslint-plugin": "^8.37.0",
     "@typescript-eslint/parser": "^8.37.0",
     "eslint": "^8.57.1",
