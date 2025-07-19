@@ -1,0 +1,134 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: vars.$spacing-lg;
+  max-width: 1260px;
+  padding: 30px;
+  margin-inline: auto;
+  text-align: left;
+
+  @include mixins.breakpoint-min(lg) {
+    text-align: center;
+  }
+}
+
+.gallery__links--wrapper ul {
+  display: flex;
+  gap: vars.$spacing-md;
+
+  @include mixins.breakpoint-min(lg) {
+    justify-content: center;
+  }
+}
+
+.gallery__images {
+  display: flex;
+  gap: vars.$spacing-xl;
+  flex-direction: column;
+
+  .gallery__images--grid:first-of-type {
+    display: grid;
+    gap: vars.$spacing-xl;
+    grid-template-columns: repeat(1, 1fr);
+
+    picture:nth-child(3) {
+      grid-column: span 1;
+    }
+
+    img:nth-of-type(1) {
+      object-position: 30% 0%;
+    }
+
+    img:nth-of-type(2) {
+      object-position: 25% 0%;
+    }
+
+    @include mixins.breakpoint-min(sm) {
+      grid-template-columns: repeat(2, 1fr);
+
+      picture:nth-child(3) {
+        grid-column: span 2;
+      }
+    }
+  }
+
+  .gallery__images--grid:last-of-type {
+    display: grid;
+    gap: vars.$spacing-lg;
+    grid-template-columns: repeat(1, 1fr);
+
+    picture:nth-child(3) {
+      grid-column: span 1;
+    }
+
+    img {
+      object-position: 35% 0%;
+    }
+
+    @include mixins.breakpoint-min(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include mixins.breakpoint-min(lg) {
+    flex-direction: row;
+
+    .gallery__images--grid:first-of-type {
+      width: 65%;
+      flex-shrink: 0;
+    }
+
+    .gallery__images--grid:last-of-type {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.media__player {
+  transition: filter vars.$transition;
+  position: relative;
+
+  &:focus {
+    filter: vars.$brightness;
+    border-radius: vars.$border-radius-md;
+
+    span {
+      background-color: vars.$quatenary;
+      color: vars.$primary;
+    }
+  }
+
+  @include mixins.breakpoint-min(sm) {
+    img {
+      height: 100%;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      filter: vars.$brightness;
+
+      span {
+        background-color: vars.$quatenary;
+        color: vars.$primary;
+      }
+    }
+  }
+}
+
+.centered {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  place-self: anchor-center;
+}
+
+footer {
+  margin-right: auto;
+}

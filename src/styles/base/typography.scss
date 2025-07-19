@@ -1,0 +1,31 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins';
+
+.heading {
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.1;
+  letter-spacing: normal;
+  color: vars.$primary;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.heading--xl {
+  @include mixins.heading(48px);
+}
+.heading--lg {
+  @include mixins.heading(38px);
+}
+.heading--md {
+  @include mixins.heading(32px);
+}
+.heading--sm {
+  @include mixins.heading(28px);
+}
+.heading--xs {
+  @include mixins.heading(24px);
+}
+.heading--xxs {
+  @include mixins.heading(18px);
+}

@@ -1,0 +1,85 @@
+@use '../abstracts/variables' as vars;
+
+.btn {
+  width: fit-content;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: vars.$spacing-xs;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 24px;
+  border-radius: vars.$border-radius-sm;
+  text-decoration: none;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: normal;
+  color: vars.$white;
+  background-color: vars.$primary;
+  transition:
+    scale vars.$transition,
+    filter vars.$transition,
+    color vars.$transition,
+    background-color vars.$transition;
+
+  &:active {
+    scale: vars.$active-scale;
+  }
+
+  &.btn--primary {
+    background-color: vars.$primary;
+    color: vars.$white;
+
+    &:focus {
+      background-color: vars.$quatenary;
+      color: vars.$primary;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: vars.$quatenary;
+        color: vars.$primary;
+      }
+    }
+  }
+
+  &.btn--secondary {
+    background-color: vars.$secondary;
+    color: vars.$white;
+
+    &:focus {
+      background-color: vars.$quatenary;
+      color: vars.$secondary;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: vars.$quatenary;
+        color: vars.$secondary;
+      }
+    }
+  }
+
+  &.btn--danger {
+    background-color: vars.$danger;
+    color: vars.$white;
+
+    &:focus {
+      filter: vars.$brightness;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        filter: vars.$brightness;
+      }
+    }
+  }
+
+  &.rounded {
+    padding: 8px;
+    width: 48px;
+    height: 48px;
+    border-radius: 999px;
+  }
+}

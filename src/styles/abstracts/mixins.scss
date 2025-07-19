@@ -1,0 +1,24 @@
+@use 'sass:map';
+@use 'variables' as vars;
+
+@mixin heading($font-size) {
+  font-size: $font-size;
+}
+
+@mixin breakpoint-max($name) {
+  @media (max-width: map.get(vars.$breakpoints, $name)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-min($name) {
+  @media (min-width: map.get(vars.$breakpoints, $name)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-between($min, $max) {
+  @media (min-width: map.get(vars.$breakpoints, $min)) and (max-width: map.get(vars.$breakpoints, $max)) {
+    @content;
+  }
+}
