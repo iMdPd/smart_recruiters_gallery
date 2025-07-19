@@ -1,6 +1,43 @@
 @use '../abstracts/variables' as vars;
 @use '../abstracts/mixins';
 
+#skip-links {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: vars.$box-shadow;
+  border-bottom: 1px solid vars.$content;
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height vars.$transition;
+    flex-wrap: wrap;
+    background-color: vars.$white;
+    z-index: 10;
+    position: relative;
+
+    &:focus-within {
+      max-height: 150px;
+    }
+
+    li {
+      text-align: center;
+      flex-grow: 1;
+      margin-block: 3px;
+    }
+
+    button {
+      margin-bottom: 0;
+    }
+  }
+}
+
 .container {
   display: flex;
   flex-direction: column;

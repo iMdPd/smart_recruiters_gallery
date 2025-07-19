@@ -17,6 +17,7 @@
   letter-spacing: normal;
   color: vars.$white;
   background-color: vars.$primary;
+  flex-shrink: 0;
   transition:
     scale vars.$transition,
     filter vars.$transition,
