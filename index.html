@@ -57,21 +57,25 @@
 </head>
 
 <body>
-  <div class="container">
+  <section id="skip-links">
+    <ul></ul>
+  </section>
 
-    <header>
-      <h1 class="heading heading--lg">Gallery Heading</h1>
+  <div class="container">
+    <header aria-describedby="header-heading">
+      <h1 id="header-heading" class="heading heading--lg">Gallery Heading</h1>
 
       <p>
         Gallery paragraph - Lorem <i>ipsum</i> dolor sit amet, <b>consectetur</b> adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad <a href="#">minim</a> veniam, quis nostrud
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad <a href="#" target="_blank"
+          rel="noopener noreferrer" referrerpolicy="no-referrer">minim</a> veniam, quis nostrud
         exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </p>
     </header>
 
     <main>
-      <section class="gallery__links">
-        <h2 class="heading heading--md">Gallery Links</h2>
+      <section class="gallery__links--section" aria-describedby="gallery__links-heading">
+        <h2 id="gallery__links-heading" class="heading heading--md">Gallery Links</h2>
 
         <nav class="gallery__links--wrapper">
           <ul>
@@ -99,39 +103,43 @@
         </nav>
       </section>
 
-      <section class="gallery__images">
+      <section class="gallery__images" aria-describedby="gallery__images-heading">
+        <h2 id="gallery__images-heading" class="heading heading--md sr-only">Gallery Images</h2>
+
         <div class="gallery__images--grid">
           <picture>
             <source media="(min-width: 0px)" type="image/webp"
               srcset="/images/flying_robot_500.webp 1x, /images/flying_robot_920.webp 2x">
-            <img src="/images/flying_robot_920.webp" alt="" loading="eager" fetchpriority="high" width="auto"
-              height="500px">
+            <img src="/images/flying_robot_920.webp" alt="Company mascot - flying robot" loading="eager"
+              fetchpriority="high" width="auto" height="500px">
           </picture>
 
           <picture>
-            <img src="/images/office_workers.webp" alt="" loading="eager" fetchpriority="high" width="auto"
-              height="500px">
+            <img src="/images/office_workers.webp" alt="Office workers greeting each other" loading="eager"
+              fetchpriority="high" width="auto" height="500px">
           </picture>
 
           <picture>
             <source media="(min-width: 0px)" type="image/webp"
               srcset="/images/city_skyline_500.webp 1x, /images/city_skyline_600.webp 2x">
-            <img src="/images/city_skyline_600.webp" alt="" loading="lazy" fetchpriority="low" width="auto"
-              height="250px">
+            <img src="/images/city_skyline_600.webp" alt="City skyline during sunset" loading="lazy" fetchpriority="low"
+              width="auto" height="250px">
           </picture>
         </div>
 
         <div class="gallery__images--grid">
-          <button id="media-player" class="media__player">
+          <button id="media-player" class="media__player" aria-label="Open video player" aria-haspopup="dialog"
+            aria-controls="video-modal">
             <picture>
               <source media="(min-width: 0px)" type="image/webp"
                 srcset="/images/office_robot_500.webp 1x, /images/office_robot_720.webp 2x">
-              <img src="/images/office_robot_720.webp" alt="" loading="lazy" fetchpriority="low" width="auto"
-                height="250px">
+              <img src="/images/office_robot_720.webp" alt="" role="presentation" loading="lazy" fetchpriority="low"
+                width="auto" height="250px">
             </picture>
 
             <span class="btn rounded centered">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none"
+                aria-hidden="true" focusable="false">
                 <path
                   d="M3.42188 0.828143C2.72813 0.40158 1.85625 0.387518 1.14844 0.785955C0.440625 1.18439 0 1.93439 0 2.75002V19.25C0 20.0656 0.440625 20.8156 1.14844 21.2141C1.85625 21.6125 2.72813 21.5938 3.42188 21.1719L16.9219 12.9219C17.5922 12.5141 18 11.7875 18 11C18 10.2125 17.5922 9.49064 16.9219 9.07814L3.42188 0.828143Z"
                   fill="currentColor" />
@@ -142,7 +150,8 @@
           <picture>
             <source media="(min-width: 0px)" type="image/webp"
               srcset="/images/students_500.webp 1x, /images/students_800.webp 2x">
-            <img src="/images/students_800.webp" alt="" loading="lazy" fetchpriority="low" width="auto" height="500px">
+            <img src="/images/students_800.webp" alt="Students" loading="lazy" fetchpriority="low" width="auto"
+              height="500px">
           </picture>
         </div>
       </section>
@@ -152,7 +161,7 @@
           <header>
             <h1 class="heading heading--lg">Modal Heading</h1>
 
-            <button id="modal-close" class="btn btn--danger rounded" autofocus>
+            <button id="modal-close" class="btn btn--danger rounded" aria-label="close video modal" autofocus>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="24" viewBox="0 0 18 24" fill="none"
                 aria-hidden="true" focusable="false">
                 <path
@@ -173,7 +182,8 @@
       </dialog>
     </main>
 
-    <footer>
+    <footer aria-describedby="footer-heading">
+      <h2 id="footer-heading" class="heading heading--md sr-only">Gallery Links</h2>
       <p>
         <b>Gallery media copyright</b> - Lorem ipsum dolor sit amet.
       </p>
