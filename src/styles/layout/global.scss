@@ -55,7 +55,12 @@
 
 .gallery__links--wrapper ul {
   display: flex;
-  gap: vars.$spacing-md;
+  flex-direction: column;
+
+  @include mixins.breakpoint-min(xs) {
+    flex-direction: row;
+    gap: vars.$spacing-md;
+  }
 
   @include mixins.breakpoint-min(lg) {
     justify-content: center;
