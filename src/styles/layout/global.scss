@@ -48,6 +48,11 @@
   margin-inline: auto;
   text-align: left;
 
+  & > header p {
+    max-width: 800px;
+    text-align: left;
+  }
+
   @include mixins.breakpoint-min(lg) {
     text-align: center;
   }
