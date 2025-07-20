@@ -5,8 +5,7 @@ Features optimized images, modern HTML structure, and a custom dialog component.
 
 ## Live preview
 
-https://smart-recruiters-gallery-qpyrhs08q-imdpds-projects.vercel.app/
-
+https://smart-recruiters-gallery-lz2k6k13f-imdpds-projects.vercel.app
 
 ## Features
 
